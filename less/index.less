@@ -4,56 +4,264 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  background-color: lightgray;
+  height: 100%;
+  font-size: 62.5%;
 }
 
+h1,
+h2 {
+  font-size: 2rem;
+}
+
+// .top-content-box 
+img {
+  width: 100%;
+  height: 60%;
+}
+
+p {
+  line-height: 1.25;
+  margin: 20px 0px;
+  font-size: 1.8rem;
+}
+
+
+
+// mixins
+.border(){
+border-bottom: 1px solid #6B7A8F;
+
+}
+
+// Main Container
+.container {
+ background-color: white;
+  max-width: 800px;
+  margin: 0px auto;
+  font-size: 1.6rem;
+  border: 2px solid red;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 20px 0;
+  .border();
+
+  @media(max-width: 515px) {
+    flex-direction: column;
+    align-items: center;
+  } //this closes header media query
+  h1 {
+     color:#6B7A8F;
+    font-size: 3rem;
+    @media(max-width: 515px) {
+      margin-bottom: 20px;
+    }
+  } //this closes h1
+
+ 
+  nav {
+    margin-left: 62px;
+
+    @media screen and(max-width: 515px) {
+      margin-left: 0;
+    } //this closes nav media query
+    a {
+      margin-left: 20px;
+	  font-size: 2rem;
+	  text-decoration: none;
+	  color: #F7882F;
+      font-weight: bold;
+    } // this closes a
+  } //this closes nav
+} //this closes header
+
+.main-content {
+	display: flex;
+	flex-wrap: wrap;
+
+	@media( max-width: 515px ) {
+		flex-direction: column;
+	}//this closes main-content media query
+	h2{
+		color:#6B7A8F;
+		font-size: 2.5rem;
+	  }
+	section { 
+	   margin: 20px 2.5%;
+	   width: 45%;
+	   @media( max-width: 515px ){
+		   width: 90%;
+
+	   }
+	}//this closes main-content section
+}// this closes main-content
+
+.footer{
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+	
+	p {
+		color: #6B7A8F;
+		width: 90%;
+		display: flex;
+		justify-content: space-around;
+	}//this closes footer p
+}//this closes footer
+
+.button-container {
+	border: 1px solid gray;
+
+}
+.contact {
+	display: block;
+	background-color:#6B7A8F;
+	margin: 0 10px 20px;
+	width: 200px;
+	height: 45px;
+	font-size: 2rem;
+	color: white;
+
+	@media( max-width: 515px ){
+		width: 90%;
+		height: 50px;
+		font-size: 2.5rem;
+	}//this closes contact button media query
+}// this closes button
