@@ -163,16 +163,28 @@ p {
 // mixins
 .border(){
 border-bottom: 1px solid #6B7A8F;
-
 }
+.border-top(){
+	border-top: 1px solid #6B7A8F;
+}
+.padding(){
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+//variables
+@header-font: 'Spectral', serif;
+
 
 // Main Container
 .container {
- background-color: white;
-  max-width: 800px;
+  background-color: white;
+  max-width: 880px;
   margin: 0px auto;
   font-size: 1.6rem;
-  border: 2px solid red;
+  border: 1px solid lightsteelblue;;
+  
+  .padding();
 }
 
 header {
@@ -181,6 +193,7 @@ header {
   margin: 20px 0;
   padding: 20px 0;
   .border();
+  .padding();
 
   @media(max-width: 515px) {
     flex-direction: column;
@@ -188,7 +201,8 @@ header {
   } //this closes header media query
   h1 {
      color:#6B7A8F;
-    font-size: 3rem;
+	font-size: 3rem;
+     font-family: @header-font;
     @media(max-width: 515px) {
       margin-bottom: 20px;
     }
@@ -205,7 +219,7 @@ header {
       margin-left: 20px;
 	  font-size: 2rem;
 	  text-decoration: none;
-	  color: #F7882F;
+	  color: #ed8a63;
       font-weight: bold;
     } // this closes a
   } //this closes nav
@@ -214,6 +228,7 @@ header {
 .main-content {
 	display: flex;
 	flex-wrap: wrap;
+	flex-grow: 1;
 
 	@media( max-width: 515px ) {
 		flex-direction: column;
@@ -232,25 +247,14 @@ header {
 	}//this closes main-content section
 }// this closes main-content
 
-.footer{
-	margin-bottom: 40px;
-	display: flex;
-	justify-content: center;
-	padding-top: 20px;
-	
-	p {
-		color: #6B7A8F;
-		width: 90%;
-		display: flex;
-		justify-content: space-around;
-	}//this closes footer p
-}//this closes footer
 
 .button-container {
-	border: 1px solid gray;
+
+	display: flex;
+	justify-content: center;
 
 }
-.contact {
+.contact-button {
 	display: block;
 	background-color:#6B7A8F;
 	margin: 0 10px 20px;
@@ -258,10 +262,26 @@ header {
 	height: 45px;
 	font-size: 2rem;
 	color: white;
-
+    .padding();
 	@media( max-width: 515px ){
 		width: 90%;
 		height: 50px;
 		font-size: 2.5rem;
 	}//this closes contact button media query
 }// this closes button
+
+.footer{
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+	.padding();
+	.border-top();
+
+	p {
+		color: #6B7A8F;
+		width: 90%;
+		display: flex;
+		justify-content: space-around;
+	}//this closes footer p
+}//this closes footer

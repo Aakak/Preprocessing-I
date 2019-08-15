@@ -151,10 +151,12 @@ p {
 }
 .container {
   background-color: white;
-  max-width: 800px;
+  max-width: 880px;
   margin: 0px auto;
   font-size: 1.6rem;
-  border: 2px solid red;
+  border: 1px solid lightsteelblue;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 header {
   display: flex;
@@ -162,6 +164,8 @@ header {
   margin: 20px 0;
   padding: 20px 0;
   border-bottom: 1px solid #6B7A8F;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 @media (max-width: 515px) {
   header {
@@ -172,6 +176,7 @@ header {
 header h1 {
   color: #6B7A8F;
   font-size: 3rem;
+  font-family: 'Spectral', serif;
 }
 @media (max-width: 515px) {
   header h1 {
@@ -190,12 +195,13 @@ header nav a {
   margin-left: 20px;
   font-size: 2rem;
   text-decoration: none;
-  color: #F7882F;
+  color: #ed8a63;
   font-weight: bold;
 }
 .main-content {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
 }
 @media (max-width: 515px) {
   .main-content {
@@ -215,22 +221,11 @@ header nav a {
     width: 90%;
   }
 }
-.footer {
-  margin-bottom: 40px;
+.button-container {
   display: flex;
   justify-content: center;
-  padding-top: 20px;
 }
-.footer p {
-  color: #6B7A8F;
-  width: 90%;
-  display: flex;
-  justify-content: space-around;
-}
-.button-container {
-  border: 1px solid gray;
-}
-.contact {
+.contact-button {
   display: block;
   background-color: #6B7A8F;
   margin: 0 10px 20px;
@@ -238,11 +233,28 @@ header nav a {
   height: 45px;
   font-size: 2rem;
   color: white;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 @media (max-width: 515px) {
-  .contact {
+  .contact-button {
     width: 90%;
     height: 50px;
     font-size: 2.5rem;
   }
+}
+.footer {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-top: 1px solid #6B7A8F;
+}
+.footer p {
+  color: #6B7A8F;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
 }
